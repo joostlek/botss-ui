@@ -6,7 +6,7 @@ import router from "@/router";
 import axios from "@/plugins/axios";
 import './plugins/busje';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 let initOptions = {
   url: 'https://auth.indicium.hu/auth', realm: 'botss', clientId: 'botss-management'

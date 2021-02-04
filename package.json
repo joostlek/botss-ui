@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "yarn build-live",
+    "build-local": "cross-env VUE_APP_MODE=local vue-cli-service build",
+    "build-dev": "cross-env VUE_APP_MODE=dev vue-cli-service build",
+    "build-live": "cross-env VUE_APP_MODE=live vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -12,6 +15,7 @@
     "axios": "^0.21.1",
     "axios-middleware": "^0.3.1",
     "core-js": "^3.6.5",
+    "cross-env": "^7.0.3",
     "keycloak-js": "^12.0.2",
     "node-sass": "^5.0.0",
     "vue": "^2.6.11",

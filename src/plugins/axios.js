@@ -5,7 +5,10 @@ import AuthMiddleware from "@/middleware/AuthMiddleware";
 
 const api = {}
 api.install = function (Vue) {
-    const baseURL = 'http://localhost:8080/api/v1';
+
+    const devEnv = process.env.VUE_APP_MODE !== 'live';
+
+    const baseURL = devEnv ? 'http://localhost:8080/api/v1' : 'https://api.botss.indicium.hu/api/v1';
 
     const apiInstance = axios.create({ baseURL: baseURL });
 
