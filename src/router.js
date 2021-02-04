@@ -8,7 +8,7 @@ import ParticipantInfoForm from "@/views/ParticipantInfoForm";
 import Payment from "@/views/Payment";
 import PaymentDone from "@/views/PaymentDone";
 import Overview from "@/views/dashboard/Overview";
-import Profiel from "@/views/Profiel";
+import Profiel from "@/views/dashboard/profiel/Profiel";
 import Teams from "@/views/dashboard/teams/Teams";
 import JoinTeam from "@/views/dashboard/teams/JoinTeam";
 import CreateTeam from "@/views/dashboard/teams/CreateTeam";
