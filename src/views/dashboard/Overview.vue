@@ -8,7 +8,6 @@
           md="3"
       >
         <v-sheet
-            min-height="70vh"
             rounded="lg"
         >
           <v-list
@@ -30,7 +29,6 @@
               </v-list-item>
 
               <v-list-group
-                  :value="true"
                   prepend-icon="mdi-account-group">
                 <template v-slot:activator>
                   <v-list-item-title>Teams</v-list-item-title>
@@ -104,7 +102,6 @@
           md="8"
       >
         <v-sheet
-            min-height="70vh"
             rounded="lg"
             class="sheet"
         >
