@@ -6,7 +6,8 @@
 export default {
 name: "Login",
   created() {
-    this.$keycloak.login({redirectUri: 'http://localhost:8081/callback'});
+    const devEnv = process.env.VUE_APP_MODE !== 'live';
+    this.$keycloak.login({redirectUri: devEnv ? 'http://localhost:8081/callback' : 'https://botss.indicium.hu/callback'});
   }
 }
 </script>
