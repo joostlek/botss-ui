@@ -19,7 +19,7 @@
               <v-list-item-icon v-if="team.teamCaptain === teamMember.id">
                 <v-icon color="yellow lighten-1">mdi-crown</v-icon>
               </v-list-item-icon>
-              <v-list-item-action v-else>
+              <v-list-item-action v-if="team.teamCaptain === $keycloak.subject && team.teamCaptain !== teamMember.id">
                 <v-btn
                     icon
                     @click="() => kickTeamMember(teamMember.id)"
