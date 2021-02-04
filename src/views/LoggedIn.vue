@@ -9,17 +9,18 @@ name: "LoggedIn",
     user: null
   }),
   async mounted() {
-    const participant = await this.$keycloak.loadUserInfo();
-    const participantId = participant.sub;
+    const participantId = this.$keycloak.subject;
     try {
       const participant = await this.$api.get(`/participants/${participantId}`);
       if (participant.data.hasPaid) {
-        await this.$router.push({'name': 'Dashboard'})
+        await this.$router.push({'name': 'Profile'})
       } else {
-        await this.$router.push({'name': 'Payment'})
+        await this.$router.push({'name': 'Setup'})
       }
     } catch (err) {
-      await this.$router.push({'name': 'ParticipantInfoForm'})
+      if (err.response.status === 404) {
+        await this.$router.push({'name': 'Setup'})
+      }
     }
   }
 }
