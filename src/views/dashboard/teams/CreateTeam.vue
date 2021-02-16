@@ -44,6 +44,7 @@ export default {
       this.validate();
       await this.$api.post("/teams", {name: this.name});
       this.$eventBus.$emit('updateUserTeam')
+      await this.$router.push({name: "TeamInfo"})
     },
     validate() {
       this.$refs.form.validate();
