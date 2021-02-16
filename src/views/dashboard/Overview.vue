@@ -38,9 +38,6 @@
                     v-if="team === null"
                     :to="{name: 'CreateTeam'}"
                 >
-                  <v-list-item-icon>
-                    <v-icon>mdi-plus</v-icon>
-                  </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title>Maak een team</v-list-item-title>
                   </v-list-item-content>
@@ -50,9 +47,6 @@
                     v-if="team === null"
                     :to="{name: 'JoinTeam'}"
                 >
-                  <v-list-item-icon>
-                    <v-icon>mdi-account-multiple-plus</v-icon>
-                  </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title>Join een team</v-list-item-title>
                   </v-list-item-content>
@@ -62,9 +56,6 @@
                     v-if="team !== null"
                     :to="{name: 'TeamInfo'}"
                 >
-                  <v-list-item-icon>
-                    <v-icon>mdi-information</v-icon>
-                  </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title>Teaminformatie</v-list-item-title>
                   </v-list-item-content>
@@ -74,15 +65,53 @@
                     v-if="team !== null"
                     :to="{name: 'InviteTeamMembers'}"
                 >
-                  <v-list-item-icon>
-                    <v-icon>mdi-account-plus</v-icon>
-                  </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title>Mensen uitnodigen</v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
 
               </v-list-group>
+
+              <v-list-group
+                  prepend-icon="mdi-wrench">
+                <template v-slot:activator>
+                  <v-list-item-title>Beheer</v-list-item-title>
+                </template>
+
+                <v-list-item
+                    :to="{name: 'ManageDashboard'}"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Dashboard</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item
+                    :to="{name: 'ManageTeams'}"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Teams</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item
+                    :to="{name: 'ManageParticipants'}"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Deelnemers</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item
+                    :to="{name: 'ManageAssociations'}"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>Verenigingen</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+
+              </v-list-group>
+              <v-divider></v-divider>
               <v-list-item
               @click="logout"
               >

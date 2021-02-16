@@ -12,6 +12,12 @@ import CreateTeam from "@/views/dashboard/teams/CreateTeam";
 import TeamInfo from "@/views/dashboard/teams/TeamInfo";
 import InviteMembers from "@/views/dashboard/teams/InviteMembers";
 import Setup from "@/views/setup/Setup";
+import Manage from "@/views/dashboard/manage/Manage";
+import ManageTeams from "@/views/dashboard/manage/ManageTeams";
+import ManageParticipants from "@/views/dashboard/manage/ManageParticipants";
+import ManageAssociations from "@/views/dashboard/manage/ManageAssociations";
+import CreateAssociation from "@/views/dashboard/manage/CreateAssociation";
+import Dashboard from "@/views/dashboard/manage/Dashboard";
 
 Vue.use(Router);
 
@@ -78,6 +84,38 @@ export default new Router({
                             path: 'invite',
                             name: 'InviteTeamMembers',
                             component: InviteMembers
+                        },
+                    ]
+                },
+                {
+                    path: 'admin',
+                    name: 'Manage',
+                    component: Manage,
+                    children: [
+                        {
+                            path: 'dashboard',
+                            name: 'ManageDashboard',
+                            component: Dashboard
+                        },
+                        {
+                            path: 'teams',
+                            name: 'ManageTeams',
+                            component: ManageTeams
+                        },
+                        {
+                            path: 'participants',
+                            name: 'ManageParticipants',
+                            component: ManageParticipants
+                        },
+                        {
+                            path: 'associations',
+                            name: 'ManageAssociations',
+                            component: ManageAssociations
+                        },
+                        {
+                            path: 'associations/create',
+                            name: 'CreateAssociation',
+                            component: CreateAssociation
                         },
                     ]
                 },
