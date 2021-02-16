@@ -44,7 +44,9 @@
                       @click="() => selectAssociation(association.slug)"
                       class="logo-col"
                       cols="12"
-                      md="6">
+                      md="6"
+                      lg="4"
+                      xl="3">
                     <div>
                       <img :src="association.logoUrl" class="logo">
                     </div>
