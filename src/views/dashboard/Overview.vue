@@ -128,7 +128,10 @@ export default {
   },
   methods: {
     async logout() {
+      localStorage.removeItem("user");
+      localStorage.removeItem("team");
       this.$keycloak.logout();
+      await this.$router.push({name: 'Home'})
     },
     async updateUserAndTeam() {
       this.getUser().then(async () => {
