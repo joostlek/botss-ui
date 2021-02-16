@@ -130,8 +130,8 @@ export default {
     async logout() {
       localStorage.removeItem("user");
       localStorage.removeItem("team");
-      this.$keycloak.logout();
-      await this.$router.push({name: 'Home'})
+      const devEnv = process.env.VUE_APP_MODE !== 'live';
+      this.$keycloak.logout({redirectUri: devEnv ? 'http://localhost:8081/' : 'https://botss.indicium.hu/'});
     },
     async updateUserAndTeam() {
       this.getUser().then(async () => {
