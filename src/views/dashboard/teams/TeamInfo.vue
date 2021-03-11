@@ -7,6 +7,7 @@
             cols="12"
             md="6"
         >
+          Om mensen mee te laten ga je naar <router-link :to="{name: 'InviteTeamMembers'}">deze pagina</router-link> en deel je de code!
           <v-list>
             <v-subheader>Leden</v-subheader>
             <v-list-item
