@@ -25,12 +25,6 @@
             {{ link.title }}
           </v-tab>
         </v-tabs>
-
-        <v-avatar
-            class="hidden-sm-and-down"
-            color="grey darken-1 shrink"
-            size="32"
-        ></v-avatar>
       </v-app-bar>
 
       <v-main class="grey lighten-3">
@@ -85,6 +79,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+  //margin-top: 60px;
 }
 </style>
