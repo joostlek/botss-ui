@@ -72,8 +72,8 @@ export default {
     societies: [
       {
         name: 'Avanti',
-        logoUrl: '',
-        description: '',
+        logoUrl: '/avanti.png',
+        description: 'Avanti is de studievereniging voor het Instituut voor Social Work.',
         websiteUrl: 'https://www.instagram.com/sv.avanti/'
       },
       {
