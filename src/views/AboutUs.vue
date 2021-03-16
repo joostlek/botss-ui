@@ -114,8 +114,9 @@ export default {
       },
       {
         name: 'S.V. Vesta',
-        logoUrl: '',
-        description: '',
+        logoUrl: 'https://www.sv-vesta.nl/images/Vesta/logo_kleur_300.png',
+        description: 'Vesta is de studievereniging voor de studie Integrale Veiligheidskunde.',
+        websiteUrl: 'https://www.sv-vesta.nl/'
       },
     ]
   }),
