@@ -45,7 +45,7 @@ export default {
       }
     });
     this.links.push({
-      title: 'Over ons',
+      title: 'Verenigingen',
       to: {
         name: 'AboutUs'
       }
