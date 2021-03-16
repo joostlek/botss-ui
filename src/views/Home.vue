@@ -57,8 +57,8 @@
 
     </v-row>
     <v-parallax
-        src="/show.jpg"
-        height="250"
+        src="/show_2.jfif"
+        height="500"
     >
     </v-parallax>
     <v-row

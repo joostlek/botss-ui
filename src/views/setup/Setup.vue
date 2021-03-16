@@ -143,6 +143,9 @@
               <h2>Betaling</h2>
               <p>Om je aanmelding te voltooien vragen we je om €1,50 te betalen. Je kan dit doen via iDeal. Klik op de knop volgende om verder te gaan.</p>
 
+              <p v-if="!!paymentError">
+                {{paymentError}}
+              </p>
               <v-row
                   class="form"
               >
@@ -249,9 +252,16 @@ export default {
       lastName: '',
       phoneNumber: '',
       emailAddress: ''
-    }
+    },
+    paymentError: null,
   }),
   methods: {
+    async autoFillFromToken() {
+      const info = await this.$keycloak.loadUserInfo();
+      this.participantData.firstName = info.given_name;
+      this.participantData.lastName = info.family_name;
+      this.participantData.emailAddress = info.email;
+    },
     async getAssociations() {
       const associations = await this.$api.get("/associations");
       this.associations = associations.data;
@@ -282,8 +292,12 @@ export default {
     },
     async generatePaymentLink() {
       const devEnv = process.env.VUE_APP_MODE !== 'live';
-      const betaling = await this.$api.post(`/participants/${this.$keycloak.subject}/payments`, {redirectUrl: `${devEnv ? 'http://localhost:8081' : 'https://botss.indicium.hu'}/aanmelding?state=after_payment`})
-      window.location.href = betaling.data.checkoutUrl;
+      try {
+        const betaling = await this.$api.post(`/participants/${this.$keycloak.subject}/payments`, {redirectUrl: `${devEnv ? 'http://localhost:8081' : 'https://botss.indicium.hu'}/aanmelding?state=after_payment`})
+        window.location.href = betaling.data.checkoutUrl;
+      } catch (e) {
+        this.paymentError = "Er is helaas een fout opgetreden! Neem contact op met een bestuurder van je vereniging."
+      }
     },
     async receiveUser() {
       try {
@@ -311,6 +325,7 @@ export default {
   async mounted() {
     await this.getAssociations();
     await this.receiveUser();
+    await this.autoFillFromToken();
   }
 }
 </script>
