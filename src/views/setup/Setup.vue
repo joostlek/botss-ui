@@ -163,7 +163,7 @@
             </v-stepper-content>
             <v-stepper-content step="4">
               <h2>Team</h2>
-              <p>Om mee te kunnen doen met de team competitie, kan je hier je eigen team aanmaken of eentje joinen, maar natuurlijk kan je ook individueel meespelen.</p>
+              <p>Om mee te kunnen doen met de team competitie, kan je hier je eigen team aanmaken of eentje joinen, dit kan je ook later doen.</p>
 
               <v-row
                   class="form"
@@ -178,7 +178,7 @@
                       color="primary"
                       @click="() => goTo('Profile')"
                   >
-                    Individueel
+                    Ik doe dit later
                   </v-btn>
                 </v-col>
                 <v-col

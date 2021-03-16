@@ -24,7 +24,7 @@
       </v-row>
     </v-parallax>
     <v-row
-        class="white pt-16 pb-16"
+        class="pt-16 pb-16"
     >
       <v-col
           cols="12"
@@ -41,8 +41,16 @@
         <v-btn
             color="primary"
             :to="{name: 'Login'}"
+            class="mr-5"
         >
           Aanmelden
+        </v-btn>
+        <v-btn
+            color="primary"
+            outlined
+            :to="{path: '/', hash: '#uitleg'}"
+        >
+          Hoe werkt het?
         </v-btn>
       </v-col>
 
@@ -54,7 +62,7 @@
     >
     </v-parallax>
     <v-row
-        class="white pt-16 pb-16"
+        class="pt-16 pb-16"
     >
       <v-col
           cols="12"
@@ -62,7 +70,7 @@
           md="6"
           sm="12"
       >
-        <h1 class="text-h3 pb-4">
+        <h1 class="text-h3 pb-4" id="uitleg">
           Hoe werkt het?
         </h1>
         <p class="text-body-1">
