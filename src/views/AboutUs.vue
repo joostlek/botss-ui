@@ -79,7 +79,7 @@ export default {
       {
         name: 'S.V. Codex',
         logoUrl: 'https://image.jimcdn.com/app/cms/image/transf/none/path/s1c843e1eba75abe6/image/i470a3bbeefdaeda7/version/1615394045/image.png',
-        description: '',
+        description: 'SV Codex is de studievereniging de studies Sociaal juridisch dienstverlening en HBO-Rechten.',
         websiteUrl: 'https://www.svcodex.nl/'
       },
       {
@@ -91,7 +91,7 @@ export default {
       {
         name: 'S.V. Forum',
         logoUrl: 'https://www.svforum.nl/wp-content/uploads/2020/09/cropped-SV-FORUM-logo-2020-CMYK-Full-Color-The-Brandstones-01.png',
-        description: '',
+        description: 'Studievereniging Forum is dé studievereniging voor alle economische instituten aan de Hogeschool Utrecht. Het Forum is een plein in het oude Romeinse rijk waar Handel, Cultuur, Politiek en sociale activiteiten samen kwamen. Dit is dan ook onze visie, S.v. Forum moet een plek zijn waar studenten met de beroepspraktijk in contact komen, waar ze terecht kunnen voor studie activiteiten, en een plaats voor ontspanning en sociale binding onder de studenten.',
         websiteUrl: 'https://www.svforum.nl/'
       },
       {
@@ -108,7 +108,7 @@ export default {
       },
       {
         name: 'Utrechtse Technische Vereniging',
-        logoUrl: 'http://www.utvweb.nl/wp-content/uploads/2017/11/UTVlogo_def-1-e1511267812986.png',
+        logoUrl: '/utv.png',
         description: '',
         websiteUrl: 'http://www.utvweb.nl/'
       },
