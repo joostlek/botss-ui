@@ -73,6 +73,7 @@
               </v-list-group>
 
               <v-list-group
+                  v-if="hasManageAccess"
                   prepend-icon="mdi-wrench">
                 <template v-slot:activator>
                   <v-list-item-title>Beheer</v-list-item-title>
@@ -149,6 +150,8 @@ export default {
     team: null,
   }),
   async mounted() {
+
+    console.log(this.$keycloak.resourceAccess);
     await this.getUser();
     await this.getTeam();
     this.$eventBus.$on("updateTeam", await this.getTeam);
@@ -182,6 +185,11 @@ export default {
         this.$eventBus.$emit('updatedTeam', teamResponse.data);
       }
     },
+  },
+  computed: {
+    hasManageAccess() {
+      return this.$keycloak.resourceAccess['botss']?.roles.indexOf("manage-association") !== -1;
+    }
   }
 }
 </script>
