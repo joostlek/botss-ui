@@ -96,7 +96,7 @@
                 Verenigingscompetitie
               </p>
               <p class="text-body-1">
-                De punten worden ook per vereniging bijgehouden en de vereniging die gemiddeld de meeste punten heeft zal de velbegeerde wisselbeker winnen! Dit is dan het bewijs dat jouw vereniging de slimste vereniging is van de Hogeschool Utrecht!
+                De punten worden ook per vereniging bijgehouden en de vereniging die gemiddeld de meeste punten heeft zal de felbegeerde wisselbeker winnen! Dit is dan het bewijs dat jouw vereniging de slimste vereniging is van de Hogeschool Utrecht!
               </p>
             </v-sheet>
           </v-col>
