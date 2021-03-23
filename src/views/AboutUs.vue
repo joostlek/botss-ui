@@ -103,7 +103,7 @@ export default {
       {
         name: 'Ingenium Cabo Bianci',
         logoUrl: 'https://ingeniumcabobianci.nl/wp-content/uploads/2020/03/cabo-logo-2.png',
-        description: '',
+        description: 'Ingenium Cabo Bianci is de Instituutsvereniging Design & Engineering aan de Hogeschool Utrecht. Wij organiseren activiteiten als: Excursies, Gastcolleges en Netwerkdagen en zijn ook vaak te vinden in science café Het Proeflokaal. En natuurlijk is er elke 2e donderdag van de maand een ICBorrel!',
         websiteUrl: 'https://www.ingeniumcabobianci.nl/'
       },
       {
