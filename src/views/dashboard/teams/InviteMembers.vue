@@ -3,6 +3,7 @@
   <h2>Nodig mensen uit bij {{team.name}}.</h2>
   <p>Deel de volgende code met hun:</p>
   <h1>{{team.joinCode}}</h1>
+  Er kunnen maximaal 5 personen in een team zitten.
   <h2>Deel deze code:</h2>
   <v-btn icon color="green" dark @click="sendWhatsapp">
     <v-icon>mdi-whatsapp</v-icon>

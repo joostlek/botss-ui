@@ -1,6 +1,51 @@
 <template>
   <div>
     <h2>{{team.name}}</h2>
+    <v-dialog
+        v-model="dialog"
+        width="500"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn icon v-bind="attrs" v-on="on">
+          <v-icon>mdi-pencil</v-icon>
+        </v-btn>
+      </template>
+
+      <v-card>
+        <v-card-title class="headline grey lighten-2">
+          Groepsnaam aanpassen
+        </v-card-title>
+
+        <v-card-text>
+          Pas hier je groepsnaam aan
+          <v-text-field
+              v-model="newName"
+          >
+          </v-text-field>
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+              color="secondary"
+              text
+              @click="dialog = false"
+          >
+            Annuleren
+          </v-btn>
+          <v-btn
+              color="primary"
+              text
+              :disabled="newName === team.name"
+              @click="updateTeamName"
+          >
+            Aanpassen
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <div v-if="teamMembers !== null">
       <v-row>
         <v-col
@@ -34,6 +79,11 @@
       </v-row>
 
     </div>
+    <v-container>
+      Om dit team te verwijderen moet de teamcaptain als enige overblijven en op de onderstaande knop drukken<br>
+      <v-btn color="red" :disabled="teamMembers !== null && teamMembers.size === 1" @click="deleteTeam">Verwijder team</v-btn>
+    </v-container>
+
   </div>
 </template>
 
@@ -41,11 +91,14 @@
 export default {
   name: "TeamInfo",
   data: () => ({
+    dialog: false,
+    newName: '',
     team: null,
     teamMembers: null,
   }),
   async mounted() {
     this.team = JSON.parse(localStorage.getItem("team"))
+    this.newName = this.team.name;
     this.$eventBus.$on('updatedTeam', (team) => this.team = team)
     this.$eventBus.$on('updatedTeamMembers', await this.getTeamMembers)
     await this.getTeamMembers();
@@ -61,6 +114,16 @@ export default {
     async kickTeamMember(id) {
       await this.$api.delete(`/teams/${this.team.id}/participants/${id}`);
       this.$eventBus.$emit('updatedTeamMembers')
+    },
+    async deleteTeam() {
+      await this.$api.delete(`/teams/${this.team.id}`);
+      this.$eventBus.$emit('updateUserTeam')
+      await this.$router.push({name: "Profile"})
+    },
+    async updateTeamName() {
+      await this.$api.put(`/teams/${this.team.id}`, {name: this.newName});
+      this.$eventBus.$emit('updateUserTeam');
+      this.dialog = false;
     }
   }
 }
