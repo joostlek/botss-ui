@@ -4,6 +4,7 @@
     <v-dialog
         v-model="dialog"
         width="500"
+        v-if="team.teamCaptain === $keycloak.subject"
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn icon v-bind="attrs" v-on="on">
@@ -79,7 +80,7 @@
       </v-row>
 
     </div>
-    <v-container>
+    <v-container v-if="team.teamCaptain === $keycloak.subject">
       Om dit team te verwijderen moet de teamcaptain als enige overblijven en op de onderstaande knop drukken<br>
       <v-btn color="red" :disabled="teamMembers !== null && teamMembers.size === 1" @click="deleteTeam">Verwijder team</v-btn>
     </v-container>
